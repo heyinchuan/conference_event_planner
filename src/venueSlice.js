@@ -39,7 +39,9 @@ export const venueSlice = createSlice({
   reducers: {
    
     incrementQuantity: (state, action) => {
-      const { payload: index } = action;
+      const { payload: index } = action;  // 解构出 action.payload (即 index)
+      // incrementQuantity 这个reducers函数中有个参数action, action.payload 赋值给index。 
+
       if (state[index]) {
         if (state[index].name === " Auditorium Hall (Capacity:200)" && state[index].quantity >= 3) {
           return;        }
